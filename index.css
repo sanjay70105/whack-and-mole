@@ -1,0 +1,145 @@
+/* General styles */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("background.avif");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: rgb(165, 59, 59);
+    text-align: center;
+}
+
+h2 {
+    color: rgb(185, 16, 185);
+}
+
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+.whole-holes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    width: 100%;
+}
+
+.hole {
+    width: 100%;
+    padding-top: 40%;
+    background-image: url("dirt.png");
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.mole {
+    width: 50%;
+    height: 70%;
+    background-image: url("mole.png");
+    background-size: cover;
+    position: absolute;
+    bottom: -90%;
+    left: 25%;
+    transition: bottom 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.mole.up {
+    bottom: 20%;
+}
+
+button {
+    width: 150px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgb(11, 145, 203);
+    color: rgb(255, 251, 0);
+    border-radius: 15px;
+}
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    width: 300px;
+    height: 300px;
+    background: white;
+    padding-top: 40px;
+    border-radius: 40px;
+    text-align: center;
+}
+
+.popup-content h2 {
+    margin-bottom: 10px;
+}
+
+.popup-content button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: rgb(23, 124, 168);
+    color: rgb(255, 251, 0);
+    border-radius: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .whole-holes {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .hole {
+        padding-top: 50%;
+    }
+
+    button {
+        width: 120px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .whole-holes {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+
+    .hole {
+        padding-top: 60%;
+    }
+
+    button {
+        width: 100px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}

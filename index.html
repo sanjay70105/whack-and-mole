@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack-A-Mole Game</title>
+    <link rel="icon" href="mole.png">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1>Whack-A-Mole Game</h1>
+
+    <!-- Scoreboard and Timer -->
+    <div class="score-board">
+        <h2>Timer: <span id="time">00</span></h2>
+        <h2>Score: <span id="score">0</span></h2>
+    </div>
+
+    <!-- Holes and Moles -->
+    <div class="whole-holes">
+        <div class="hole"><div class="mole"></div></div>
+        <div class="hole"><div class="mole"></div></div>
+        <div class="hole"><div class="mole"></div></div>
+        <div class="hole"><div class="mole"></div></div>
+        <div class="hole"><div class="mole"></div></div>
+        <div class="hole"><div class="mole"></div></div>
+    </div>
+
+    <!-- Start and Reset Buttons -->
+    <div class="controls">
+        <button id="startButton">Start</button>
+        <button id="reset" onclick="reset()">Reset</button>
+    </div>
+
+    <!-- Game Over Popup -->
+    <div id="gameOverPopup" class="popup">
+        <div class="popup-content">
+            <h2>Game Over</h2>
+            <p>Your Score: <span id="finalScore">0</span></p>
+            <button id="closePopup">Close</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
